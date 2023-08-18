@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BookTracking.Models
+namespace Boo.Models
 {
     public class Book
     {

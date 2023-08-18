@@ -1,16 +1,21 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using BookTracking.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<BookTrackingContext>(options =>
+
+    options.UseSqlite(builder.Configuration.GetConnectionString("BookTrackingContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 // Configure the DbContext
-builder.Services.AddDbContext<BookTrackingDbContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+// builder.Services.AddDbContext<BookTrackingDbContext>(options =>
+// {
+//     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+// });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
