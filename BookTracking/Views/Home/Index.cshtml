@@ -1,8 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Book Tracking App";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1 class="text-center">Book Tracking App</h1>
+
+<div class="text-center mt-5">
+    <a href="@Url.Action("Index", "Book")" class="btn btn-primary btn-lg m-2">Add Book</a>
+    <a href="@Url.Action("Index", "Category")" class="btn btn-success btn-lg m-2">Add Category</a>
+    <a href="@Url.Action("Index", "CategoryType")" class="btn btn-info btn-lg m-2">Add Category Type</a>
 </div>
